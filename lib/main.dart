@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -7,6 +9,7 @@ import 'package:winesvendor/ui/home_screen.dart';
 
 
 void main() {
+  HttpOverrides.global = MyHttpOverrides();
   runApp(const MyApp());
 }
 
@@ -106,6 +109,15 @@ class _WinesPageState extends State<WinesPage> {
             ]),
       ),
     );
+  }
+}
+
+
+ class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext? context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
   }
 }
 // TODO: onpress => more details, style Ui

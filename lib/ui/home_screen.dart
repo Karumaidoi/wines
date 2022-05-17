@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
           builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.hasError) {
               return Center(
-                child: Text("An error occured: ${snapshot.error}"),
+                child: Text("An error occured: ${snapshot.error.toString().split(':')[0]}", textAlign: TextAlign.center,),
               );
             }
             if (!snapshot.hasData) {
