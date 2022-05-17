@@ -2,7 +2,7 @@
     package="com.example.winesvendor">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="winesvendor"
+        android:label="Expresso"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
