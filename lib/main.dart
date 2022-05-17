@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'App Brewery',
       theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.highContrastDark(),
         primarySwatch: Colors.blue,
       ),
       home: const WinesPage(),
